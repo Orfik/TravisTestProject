@@ -91,7 +91,9 @@
                                 <suiteXmlFile>src/main/resources/${suite.name}</suiteXmlFile>
                             </suiteXmlFiles>
                             <testFailureIgnore>true</testFailureIgnore>
-
+                            <argLine>
+                                -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                            </argLine>
                         </configuration>
                         <executions>
                             <execution>
