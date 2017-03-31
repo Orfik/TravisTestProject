@@ -95,8 +95,7 @@
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-surefire-plugin</artifactId>
                         <version>2.19</version>
-                        <executions>
-                        <execution>
+                        <configuration>
                             <redirectTestOutputToFile>true</redirectTestOutputToFile>
                             <suiteXmlFiles>
                                 <suiteXmlFile>src/main/resources/FF_testng.xml</suiteXmlFile>
@@ -105,8 +104,9 @@
                             <argLine>
                                 -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                             </argLine>
-
-
+                        </configuration>
+                        <executions>
+                            <execution>
                                 <goals>
                                     <goal>test</goal>
                                 </goals>
