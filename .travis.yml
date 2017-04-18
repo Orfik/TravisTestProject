@@ -23,7 +23,7 @@ before_script:
   #- sleep 20 # gives enough time to Selenium to start
 
 script:
-    - tar -C "/home/travis/build/Orfik/TravisTestProject/src/test/resources/geckodriver-v0.15.0-linux64.tar.gz" -cf - . | tar -C "/home/travis/build/Orfik/TravisTestProject/src/test/resources/geckodriver*" -xvf -
+    #- tar -C "/home/travis/build/Orfik/TravisTestProject/src/test/resources/geckodriver-v0.15.0-linux64.tar.gz" -cf - . | tar -C "/home/travis/build/Orfik/TravisTestProject/src/test/resources/geckodriver*" -xvf -
     - chmod +x geckodriver
    # mvn test -f ./source/pom.xml
    # perform build and run commands here
