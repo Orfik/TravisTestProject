@@ -9,8 +9,8 @@ jdk:
 addons:
    #firefox: "52.0.1" # if your project contains tests need to be run on firefox include these lines
 apt:
-   sources:
-    - google-chrome # if your project contains tests need to be run on chrome include these lines
+ sources:
+     - google-chrome
    packages:
     - google-chrome-stable
     - oracle-java8-installer
@@ -35,6 +35,6 @@ script:
     #- echo "Extracting chrome and setting PATH variable..."
     #- tar -xjf /tmp/firefox-52.0.1.tar.bz2
     - export PATH="/tmp/chrome:$PATH"
-    - echo "Using crome version `crome --version`"
+    - echo "Using crome version `chrome --version`"
     - chmod +x /home/travis/build/Orfik/TravisTestProject/src/test/resources/chromedriver
     - mvn test
