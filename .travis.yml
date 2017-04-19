@@ -24,6 +24,10 @@ before_script:
 
 script:
     #- tar -C "/home/travis/build/Orfik/TravisTestProject/src/test/resources/geckodriver-v0.15.0-linux64.tar.gz" -cf - . | tar -C "/home/travis/build/Orfik/TravisTestProject/src/test/resources/geckodriver*" -xvf -
+    - echo "Extracting firefox and setting PATH variable..."
+    - tar -xjf /tmp/firefox-43.0.tar.bz2 --directory /tmp
+    - export PATH="/tmp/firefox:$PATH"
+    - echo "Using firefox version `firefox --version`"
     - chmod +x /home/travis/build/Orfik/TravisTestProject/src/test/resources/geckodriver
     - mvn test
    # perform build and run commands here
