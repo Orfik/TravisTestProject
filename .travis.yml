@@ -24,7 +24,7 @@ before_script:
 
 script:
     #- tar -C "/home/travis/build/Orfik/TravisTestProject/src/test/resources/geckodriver-v0.15.0-linux64.tar.gz" -cf - . | tar -C "/home/travis/build/Orfik/TravisTestProject/src/test/resources/geckodriver*" -xvf -
-    - chmod +x /home/travis/build/Orfik/TravisTestProject/src/test/resources/geckodriver
+    - chmod +x /home/travis/build/Orfik/TravisTestProject/src/test/resources/geckodriver*
     - mvn test
    # perform build and run commands here
   #- %your_framework build command%
