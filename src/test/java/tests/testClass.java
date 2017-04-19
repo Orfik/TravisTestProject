@@ -17,7 +17,7 @@ public class testClass {
 
     @Test
     public void testGoogleSearch() throws InterruptedException {
-        System.setProperty("webdriver.gecko.driver",  System.getProperty("user.dir") + "//src//test/resources//geckodriver");
+        System.setProperty("webdriver.gecko.driver",  System.getProperty("user.dir") + "//src//test/resources//chromedriver");
         DesiredCapabilities capabilities = DesiredCapabilities.firefox();
         capabilities.setCapability("marionette", true);
         //driver = new RemoteWebDriver(capabilities);
@@ -31,8 +31,9 @@ public class testClass {
         WebElement button = driver.findElement(By.xpath(".//button[text()='Sign in']"));
         button.click();
         Thread.sleep(5000);
-        WebElement studioHome = driver.findElement(By.xpath("//*[@id='header']/div/div/a[1]"));
+        WebElement studioHome = driver.findElement(By.cssSelector("a.menu_page_item:nth-child(2)"));
         studioHome.click();
+        Thread.sleep(5000);
         ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//*[@id='current_account_id_chosen']/a/span"))); // Let the user actually see something!
         driver.quit();
         System.out.print("Work");
