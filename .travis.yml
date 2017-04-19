@@ -12,8 +12,9 @@ sources:
    packages:
     - google-chrome-stable
     - oracle-java8-installer
+
 addons:
-   #firefox: "52.0.1" # if your project contains tests need to be run on firefox include these lines
+   firefox: "52.0.1" # if your project contains tests need to be run on firefox include these lines
 
 
 before_install:
