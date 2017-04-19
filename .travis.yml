@@ -1,5 +1,4 @@
-language: java # set desired language
-
+language: java 
 sudo: false
 dist: trusty
 
