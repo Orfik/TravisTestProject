@@ -24,9 +24,9 @@ public class testClass {
         driver = new FirefoxDriver(capabilities);
         driver.get("https://stage.storied.co");
         Thread.sleep(5000);  // Let the user actually see something!
-        WebElement email = driver.findElement(By.id("login");
+        WebElement email = driver.findElement(By.id("login"));
         email.sendKeys("qa@storied.co");
-        WebElement password = driver.findElement(By.id("password");
+        WebElement password = driver.findElement(By.id("password"));
         password.sendKeys("zxc123");
         WebElement button = driver.findElement(By.xpath(".//button[text()='Sign in']"));
         button.click();
