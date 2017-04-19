@@ -5,8 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.Test;
 
@@ -17,7 +15,7 @@ public class testClass {
 
     @Test
     public void testGoogleSearch() throws InterruptedException {
-        System.setProperty("webdriver.gecko.driver",  System.getProperty("user.dir") + "//src//test/resources//chromedriver");
+        System.setProperty("webdriver.gecko.driver",  System.getProperty("user.dir") + "//src//test/resources//geckodriver");
         DesiredCapabilities capabilities = DesiredCapabilities.firefox();
         capabilities.setCapability("marionette", true);
         //driver = new RemoteWebDriver(capabilities);
