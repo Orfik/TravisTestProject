@@ -15,7 +15,7 @@ public class testClass {
 
     @Test
     public void testGoogleSearch() throws InterruptedException {
-        System.setProperty("webdriver.gecko.driver",  System.getProperty("user.dir") + "//src//test/resources//geckodriver_v.14.exe");
+        System.setProperty("webdriver.gecko.driver",  System.getProperty("user.dir") + "//src//test/resources//geckodriver_v.14");
         DesiredCapabilities capabilities = DesiredCapabilities.firefox();
         capabilities.setCapability("marionette", true);
         //driver = new RemoteWebDriver(capabilities);
