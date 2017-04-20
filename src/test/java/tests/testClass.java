@@ -15,23 +15,23 @@ public class testClass {
 
     @Test
     public void testGoogleSearch() throws InterruptedException {
-        System.setProperty("webdriver.gecko.driver",  System.getProperty("user.dir") + "//src//test/resources//geckodriver_v.14");
+        System.setProperty("webdriver.gecko.driver",  System.getProperty("user.dir") + "//src//test/resources//geckodriver_v.14.exe");
         DesiredCapabilities capabilities = DesiredCapabilities.firefox();
         capabilities.setCapability("marionette", true);
         //driver = new RemoteWebDriver(capabilities);
         driver = new FirefoxDriver(capabilities);
         driver.get("https://stage.storied.co");
-        Thread.sleep(5000);  // Let the user actually see something!
+        Thread.sleep(3000);  // Let the user actually see something!
         WebElement email = driver.findElement(By.id("login"));
         email.sendKeys("qa@storied.co");
         WebElement password = driver.findElement(By.id("password"));
         password.sendKeys("zxc123");
         WebElement button = driver.findElement(By.xpath(".//button[text()='Sign in']"));
         button.click();
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         WebElement studioHome = driver.findElement(By.cssSelector("a.menu_page_item:nth-child(2)"));
         studioHome.click();
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//*[@id='current_account_id_chosen']/a/span"))); // Let the user actually see something!
         driver.quit();
         System.out.print("Work");
