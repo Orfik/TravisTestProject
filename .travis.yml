@@ -4,7 +4,7 @@ sudo: false
 dist: trusty
 
 jdk:
-      - oraclejdk8
+  - oraclejdk8
 
 addons:
    firefox: "50.0" # if your project contains tests need to be run on firefox include these lines
@@ -24,9 +24,16 @@ before_script:
   #- sleep 20 # gives enough time to Selenium to start
 
 script:
-    - echo "Extracting firefox and setting PATH variable..."
-    - tar -xjf /tmp/firefox-50.0.tar.bz2 --directory /tmp
-    - export PATH="/tmp/firefox:$PATH"
-    - echo "Using firefox version `firefox --version`"
-    - chmod +x /home/travis/build/Orfik/TravisTestProject/src/test/resources/geckodriver_v.14
-    - mvn test
+  - echo "Extracting firefox and setting PATH variable..."
+  - tar -xjf /tmp/firefox-50.0.tar.bz2 --directory /tmp
+  - export PATH="/tmp/firefox:$PATH"
+  - echo "Using firefox version `firefox --version`"
+  - chmod +x /home/travis/build/Orfik/TravisTestProject/src/test/resources/geckodriver_v.14
+  - mvn test
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: a4e5508be4561b120379b4bdf50f6483efb6430c # Set in travis-ci.org dashboard
+  on:
+    branch: master
+  local_dir: /home/travis/build/Orfik/TravisTestProject/target/
