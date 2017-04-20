@@ -30,10 +30,18 @@ script:
   - echo "Using firefox version `firefox --version`"
   - chmod +x /home/travis/build/Orfik/TravisTestProject/src/test/resources/geckodriver_v.14
   - mvn test
+#deploy:
+#  provider: pages
+#  skip_cleanup: true
+#  github_token: 47213dfb5cf00db647a77cd9c2770b6b5751142b # Set in travis-ci.org dashboard
+#  local_dir: /home/travis/build/Orfik/TravisTestProject/target/
+#  on:
+#    repo: Orfik/TravisTestProject
 deploy:
-  provider: pages
+  provider: releases
+  api_key: 47213dfb5cf00db647a77cd9c2770b6b5751142b
+  file: /home/travis/build/Orfik/TravisTestProject/target/
   skip_cleanup: true
-  github_token: 47213dfb5cf00db647a77cd9c2770b6b5751142b # Set in travis-ci.org dashboard
-  local_dir: /home/travis/build/Orfik/TravisTestProject/target/
   on:
+    tags: true
     repo: Orfik/TravisTestProject
