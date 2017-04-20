@@ -33,7 +33,7 @@ script:
 deploy:
   provider: pages
   skip_cleanup: true
-  github_token: a4e5508be4561b120379b4bdf50f6483efb6430c # Set in travis-ci.org dashboard
-  on:
-    branch: master
+  github_token: 47213dfb5cf00db647a77cd9c2770b6b5751142b # Set in travis-ci.org dashboard
   local_dir: /home/travis/build/Orfik/TravisTestProject/target/
+  on:
+    repo: Orfik/TravisTestProject
